@@ -19,12 +19,12 @@
 /*--------- Abstracts variable ---------- */
 @import url("../css2");
 :root {
-  --primary: #43BAFF;
-  --main-dark: #19272B;
+  --primary: #00E5FF;
+  --main-dark: #0d1b2a;
   --stroke-2: #FFFFFF26;
   --surface: #E1F2F2;
   --white: #FFFFFF;
-  --dark-2: #142125;
+  --dark-2: #1a1c2c;
   --main-blue-1: #086AD8;
 }
 

@@ -1,22 +1,4 @@
-﻿/* ---------------------------------------------------------
-    * Name: 
-    * Version: 1.0.0
-    * Author: Themesflat
-    * Author URI: http://themesflat.com 
-
-	* Abstracts variable
-
-    * Reset css styles
-
-    * Components
-
-    * section
-
-    * dashboard
-
-    * Responsive
- ------------------------------------------------------------------------------ */
-/*--------- Abstracts variable ---------- */
+﻿
 @import url("../css2");
 :root {
   --primary: #00E5FF;
@@ -28,7 +10,7 @@
   --main-blue-1: #086AD8;
 }
 
-/*---------- Reset css styles ----------- */
+
 title html,
 body,
 div,
@@ -199,8 +181,7 @@ select {
   max-width: 100%;
 }
 
-/* General
--------------------------------------------------------------- */
+
 body,
 button,
 input,
@@ -307,8 +288,6 @@ svg path {
   transition: all 0.3s ease;
 }
 
-/* Elements
--------------------------------------------------------------- */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -328,7 +307,7 @@ hr {
   border: dashed 1px #ccc;
 }
 
-/* List */
+
 ul,
 ol {
   padding: 0;
@@ -372,7 +351,7 @@ del,
   opacity: 0.5;
 }
 
-/* Table */
+
 table,
 th,
 td {
@@ -409,7 +388,6 @@ td {
   padding: 8px 12px;
 }
 
-/* Media */
 embed,
 object,
 video {
@@ -425,9 +403,7 @@ p > video {
   margin-bottom: 0;
 }
 
-/* Forms
--------------------------------------------------------------- */
-/* Fixes */
+
 button,
 input {
   line-height: normal;
@@ -445,9 +421,7 @@ textarea {
 
 textarea {
   overflow: auto;
-  /* Removes default vertical scrollbar in IE6/7/8/9 */
   vertical-align: top;
-  /* Improves readability and alignment in all browsers */
 }
 
 input[type=checkbox] {
@@ -473,16 +447,13 @@ input[type=radio] {
   background: rgba(0, 0, 0, 0);
   cursor: pointer;
   vertical-align: sub;
-  /* Addresses excess padding in IE8/9 */
 }
 
 input[type=search] {
   -webkit-appearance: textfield;
-  /* Addresses appearance set to searchfield in S5, Chrome */
 }
 
 input[type=search]::-webkit-search-decoration {
-  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
   -webkit-appearance: none;
 }
 
@@ -492,12 +463,10 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-/* Remove chrome yellow autofill */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #f7f7f7 inset;
 }
 
-/* Reset search styling */
 input[type=search] {
   outline: 0;
 }
@@ -509,7 +478,6 @@ input[type=search]::-webkit-search-results-decoration {
   display: none;
 }
 
-/* Placeholder color */
 ::-webkit-input-placeholder {
   color: #171412;
 }
@@ -519,13 +487,11 @@ input[type=search]::-webkit-search-results-decoration {
   opacity: 1;
 }
 
-/* Since FF19 lowers the opacity of the placeholder by default */
 :-ms-input-placeholder {
   color: #171412;
 }
 
-/* Typography
--------------------------------------------------------------- */
+
 h1,
 .h1,
 h2,
@@ -590,8 +556,6 @@ h6,
   letter-spacing: -0.2px;
 }
 
-/* link style
--------------------------------------------------------------- */
 a {
   text-decoration: none;
   color: var(--white);
@@ -612,8 +576,7 @@ a:hover, a:focus {
   transition: all 0.3s ease;
 }
 
-/* tf-container
--------------------------------------------------------------- */
+
 .tf-container {
   position: relative;
   margin-left: auto;
@@ -644,8 +607,7 @@ a:hover, a:focus {
   max-width: 1650px;
 }
 
-/* Extra classes
--------------------------------------------------------------- */
+
 .hidden {
   display: none;
 }

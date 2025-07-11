@@ -1,28 +1,4 @@
-/**
- *
- * preloader
- * headerSticky
- * footer
- * changeValue
- * video
- * infiniteScroll
- * textRotate
- * counter
- * progresslevel
- * totalNumberVariant
- * deleteFile
- * datePicker
- * autoPopup
- * ajaxContactForm
- * handleSidebarFilter
- * checkPaymentCard
- * handleAccordionBorders
- * togglePassword
- * parallaxImage
- * goTop
- * preloader
- *
- **/
+
 
 (function ($) {
     ("use strict");

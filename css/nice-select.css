@@ -8,10 +8,8 @@
     clear: both;
     cursor: pointer;
     display: block;
-    /* float: left; */
     font-size: 16px;
     font-weight: 400;
-    /* text-transform: capitalize; */
     outline: none;
     position: relative;
     transition: all linear .2s;

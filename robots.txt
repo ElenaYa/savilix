@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Sitemap: https://savilix.com/sitemap.xml
+
+# Allow all bots full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Host
+Host: https://savilix.com 

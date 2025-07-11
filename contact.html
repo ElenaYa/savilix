@@ -43,6 +43,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/cookie-banner.css" />
 
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css" />
@@ -431,6 +432,9 @@
                                 <div class="big-text">
                                     İletişime <span class="text-stroke">Katılın</span>
                                 </div>
+                                <div class="big-text">
+                                    İletişime <span class="text-stroke">Katılın</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -618,6 +622,21 @@
 
     </div>
 
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3>🍪 Çerez Politikası</h3>
+                <p>Bu web sitesi deneyiminizi geliştirmek için çerezleri kullanır. Sitemizi kullanmaya devam ederek çerez kullanımını kabul etmiş olursunuz.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
+                <a href="gizlilik-politikasi.html" class="cookie-btn more">Daha Fazla</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Javascript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -635,145 +654,38 @@
     <script src="js/map.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
-    
-    <!-- Contact Form JavaScript -->
+
+    <!-- Cookie Banner Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contactform');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            // Отключаем стандартную валидацию браузера
-            form.setAttribute('novalidate', true);
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Получаем данные формы
-                const formData = new FormData(form);
-                const name = formData.get('name').trim();
-                const email = formData.get('mail').trim();
-                const phone = formData.get('phone').trim();
-                const message = formData.get('message').trim();
-                
-                // Проверяем обязательные поля
-                if (!name) {
-                    showPopup('Lütfen ad soyad alanını doldurun.', 'error');
-                    return;
-                }
-                
-                if (!email) {
-                    showPopup('Lütfen e-posta adresini doldurun.', 'error');
-                    return;
-                }
-                
-                if (!message) {
-                    showPopup('Lütfen mesaj alanını doldurun.', 'error');
-                    return;
-                }
-                
-                // Проверяем email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    showPopup('Lütfen geçerli bir e-posta adresi girin.', 'error');
-                    return;
-                }
-                
-                // Показываем успешное сообщение
-                showPopup('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.', 'success');
-                
-                // Очищаем форму
-                form.reset();
-                
-                // Сбрасываем nice-select
-                const niceSelect = form.querySelector('.nice-select .current');
-                if (niceSelect) {
-                    niceSelect.textContent = 'Konuyu seçin';
-                }
-            });
-            
-            function showPopup(message, type) {
-                // Создаем модальное окно
-                const modal = document.createElement('div');
-                modal.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 9999;
-                `;
-                
-                const popup = document.createElement('div');
-                popup.style.cssText = `
-                    background: white;
-                    padding: 30px;
-                    border-radius: 10px;
-                    max-width: 400px;
-                    width: 90%;
-                    text-align: center;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                `;
-                
-                const icon = document.createElement('div');
-                icon.style.cssText = `
-                    font-size: 48px;
-                    margin-bottom: 20px;
-                    color: ${type === 'success' ? '#28a745' : '#dc3545'};
-                `;
-                icon.innerHTML = type === 'success' ? '✓' : '✗';
-                
-                const messageEl = document.createElement('p');
-                messageEl.style.cssText = `
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                    color: #333;
-                    line-height: 1.5;
-                `;
-                messageEl.textContent = message;
-                
-                const closeBtn = document.createElement('button');
-                closeBtn.style.cssText = `
-                    background: #6366f1;
-                    color: white;
-                    border: none;
-                    padding: 12px 24px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    font-size: 14px;
-                    font-weight: 500;
-                `;
-                closeBtn.textContent = 'Tamam';
-                closeBtn.addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-                
-                popup.appendChild(icon);
-                popup.appendChild(messageEl);
-                popup.appendChild(closeBtn);
-                modal.appendChild(popup);
-                document.body.appendChild(modal);
-                
-                // Закрытие по клику вне попапа
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        document.body.removeChild(modal);
-                    }
-                });
-                
-                // Автоматическое закрытие через 5 секунд для успешных сообщений
-                if (type === 'success') {
-                    setTimeout(() => {
-                        if (document.body.contains(modal)) {
-                            document.body.removeChild(modal);
-                        }
-                    }, 5000);
-                }
+        // Cookie banner functionality
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner && !localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    banner.classList.add('show');
+                }, 1000);
             }
-        });
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+        }
+
+        // Show banner on page load
+        document.addEventListener('DOMContentLoaded', showCookieBanner);
     </script>
     <!-- /Javascript -->
 

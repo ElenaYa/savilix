@@ -42,6 +42,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/cookie-banner.css" />
 
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css" />
@@ -831,6 +832,9 @@
                                 <div class="big-text">
                                     İletişime <span class="text-stroke">Katılın</span>
                                 </div>
+                                <div class="big-text">
+                                    İletişime <span class="text-stroke">Katılın</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1018,6 +1022,21 @@
 
     </div>
 
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3>🍪 Çerez Politikası</h3>
+                <p>Bu web sitesi deneyiminizi geliştirmek için çerezleri kullanır. Sitemizi kullanmaya devam ederek çerez kullanımını kabul etmiş olursunuz.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
+                <a href="gizlilik-politikasi.html" class="cookie-btn more">Daha Fazla</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Javascript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -1033,6 +1052,39 @@
     <script src="js/carousel.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- Cookie Banner Script -->
+    <script>
+        // Cookie banner functionality
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner && !localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    banner.classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+        }
+
+        // Show banner on page load
+        document.addEventListener('DOMContentLoaded', showCookieBanner);
+    </script>
     <!-- /Javascript -->
 
 

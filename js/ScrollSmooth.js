@@ -210,9 +210,7 @@
                       l.shift(),
                       clearTimeout(a),
                       (a = setTimeout(function () {
-                          try {
-                              localStorage.SS_deltaBuffer = l.join(",");
-                          } catch (e) {}
+                          // Removed localStorage.SS_deltaBuffer
                       }, 1e3));
                   var t = 120 < e && P(e),
                       o = !P(120) && !P(100) && !t;
@@ -367,10 +365,7 @@
     function N(e, t) {
         return e && (e.nodeName || "").toLowerCase() === t.toLowerCase();
     }
-    if (window.localStorage && localStorage.SS_deltaBuffer)
-        try {
-            l = localStorage.SS_deltaBuffer.split(",");
-        } catch (e) {}
+    // Removed localStorage.SS_deltaBuffer check
     function K(e, t) {
         return Math.floor(e / t) == e / t;
     }

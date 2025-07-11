@@ -177,53 +177,6 @@
         }
     };
 
-    var ajaxContactForm = function () {
-        $("#contactform,#commentform").each(function () {
-            $(this).validate({
-                submitHandler: function (form) {
-                    var $form = $(form),
-                        str = $form.serialize(),
-                        loading = $("<div />", { class: "loading" });
-
-                    $.ajax({
-                        type: "POST",
-                        url: $form.attr("action"),
-                        data: str,
-                        beforeSend: function () {
-                            $form.find(".send-wrap").append(loading);
-                        },
-                        success: function (msg) {
-                            var result, cls;
-                            if (msg === "Success") {
-                                result = "Message Sent Successfully To Email Administrator";
-                                cls = "msg-success";
-                            } else {
-                                result = "Error sending email.";
-                                cls = "msg-error";
-                            }
-
-                            $form.prepend(
-                                $("<div />", {
-                                    class: "flat-alert mb-20 " + cls,
-                                    text: result,
-                                }).append(
-                                    $(
-                                        '<a class="close mt-0" href="#"><i class="fa fa-close"></i></a>'
-                                    )
-                                )
-                            );
-
-                            $form.find(":input").not(".submit").val("");
-                        },
-                        complete: function (xhr, status, error_thrown) {
-                            $form.find(".loading").remove();
-                        },
-                    });
-                },
-            });
-        });
-    };
-
     var handleSidebarFilter = function () {
         $("#filterShop,.sidebar-btn").on("click", function () {
             if ($(window).width() <= 1200) {
@@ -306,7 +259,6 @@
         video();
         infiniteScroll();
         counter();
-        ajaxContactForm();
         handleSidebarFilter();
         parallaxImage();
         goTop();

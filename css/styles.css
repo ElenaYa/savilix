@@ -3022,7 +3022,7 @@ fieldset {
   white-space: nowrap;
 }
 .big-text .text-stroke {
-  color: var(--stroke-2);
+  color: var(--primary);
 }
 
 .wg-blog-details {
@@ -4395,7 +4395,7 @@ a.mapboxgl-ctrl-logo {
 .project-item .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .project-item.style-2 {
   border: 0;
@@ -5233,7 +5233,7 @@ a.mapboxgl-ctrl-logo {
 .section-counting .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .section-counting .left {
   position: relative;
@@ -5279,7 +5279,7 @@ a.mapboxgl-ctrl-logo {
 .section-company .image-section img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .section-services {
